@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         fabLogin = findViewById(R.id.fabLogin);
-        tvCreate = findViewById(R.id.tvCreate); // make sure this TextView exists in XML
+        tvCreate = findViewById(R.id.tvCreate);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -49,11 +49,14 @@ public class MainActivity extends AppCompatActivity {
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
                             Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show();
-                            // Go to dashboard
-                            startActivity(new Intent(MainActivity.this, MonitoringActivity.class));
-                            finish();
+
+                            // ✅ Go to DashboardActivity instead of MonitoringActivity
+                            Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
+                            startActivity(intent);
+                            finish(); // Prevent going back to login
                         } else {
-                            Toast.makeText(this, "Login failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(this, "Login failed: " + task.getException().getMessage(),
+                                    Toast.LENGTH_LONG).show();
                         }
                     });
         });
