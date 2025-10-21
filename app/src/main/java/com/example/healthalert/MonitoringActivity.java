@@ -1,34 +1,32 @@
 package com.example.healthalert;
 
-import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import com.example.healthalert.models.patient;
-
-import java.util.ArrayList;
-import java.util.List;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class MonitoringActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView = findViewById(R.id.recyclerPatients);
-    patientAdapter adapter;
-    List<patient> patientList;
+    TextView tvHeartRate, tvBloodPressure, tvOxygen, tvTemperature;
+    Button btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_monitoring);
+        setContentView(R.layout.activity_monitoring); // ✅ matches the renamed XML
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        tvHeartRate = findViewById(R.id.tvHeartRate);
+        tvBloodPressure = findViewById(R.id.tvBloodPressure);
+        tvOxygen = findViewById(R.id.tvOxygen);
+        tvTemperature = findViewById(R.id.tvTemperature);
+        btnBack = findViewById(R.id.btnBack);
 
-        // 🔹 Dummy patient data
-        patientList = new ArrayList<patient>();
-        patientList.add(new patient("John Doe", 120, 92, 38.7, "120 / 80" ));
-        patientList.add(new patient("Jane Smith", 75, 98, 36.9, "130 / 60"));
-        patientList.add(new patient("Michael Lee", 54, 89, 37.5, "110 / 82"));
+        // Dummy values for now
+        tvHeartRate.setText("Heart Rate: 75 bpm");
+        tvBloodPressure.setText("Blood Pressure: 120 / 80 mmHg");
+        tvOxygen.setText("Oxygen Saturation: 98 %");
+        tvTemperature.setText("Temperature: 36.8 °C");
 
-        adapter = new patientAdapter(patientList);
-        recyclerView.setAdapter(adapter);
+        btnBack.setOnClickListener(v -> finish());
     }
 }

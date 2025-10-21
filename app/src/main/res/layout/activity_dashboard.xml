@@ -80,7 +80,6 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- Oxygen card-->
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
@@ -103,10 +102,8 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:id="@+id/tvOxygen"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="-- %"
                             android:textColor="#FFFFFF"
                             android:textSize="22sp"
                             android:textStyle="bold"/>
@@ -114,7 +111,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Oxygen"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp"/>
                     </LinearLayout>
@@ -143,10 +139,8 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:id="@+id/textbloodPressure"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="-- mmHg"
                             android:textColor="#FFFFFF"
                             android:textSize="22sp"
                             android:textStyle="bold"/>
@@ -154,7 +148,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Blood pressure"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp"/>
                     </LinearLayout>
@@ -182,10 +175,8 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:id="@+id/tvTemperature"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="-- ℃"
                             android:textColor="#FFFFFF"
                             android:textSize="22sp"
                             android:textStyle="bold"/>
@@ -193,7 +184,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Temperature"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp"/>
                     </LinearLayout>

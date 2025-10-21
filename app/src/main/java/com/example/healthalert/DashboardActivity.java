@@ -18,15 +18,14 @@ public class DashboardActivity extends AppCompatActivity {
 
         // --- Mock data for dashboard ---
         TextView heartRateText = findViewById(R.id.textHeartRate);
-        TextView tvOxygen = findViewById(R.id.tvOxygen);
-        TextView tvTemp = findViewById(R.id.tvTemperature);
-        TextView bloodPressureText = findViewById(R.id.textbloodPressure);
+        TextView stepsText = findViewById(R.id.textSteps);
+        TextView caloriesText = findViewById(R.id.textCalories);
+        TextView sleepText = findViewById(R.id.textSleep);
 
         heartRateText.setText("72 bpm");
-        tvOxygen.setText("Oxygen: 91%");
-        tvTemp.setText("Temperature: 38.6 °C");
-        bloodPressureText.setText("Blood Pressure: 120 / 80 mmHg");
-
+        stepsText.setText("8,540 steps");
+        caloriesText.setText("1,230 kcal");
+        sleepText.setText("7h 45m");
 
         // --- Bottom Navbar ---
         btnDashboard = findViewById(R.id.btn_dashboard);

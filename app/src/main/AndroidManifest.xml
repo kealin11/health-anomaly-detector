@@ -28,12 +28,6 @@
             android:name=".DashboardActivity"
             android:exported="false" />
 
-        <!-- profile screen -->
-        <activity android:name=".ProfileActivity" />
-
-        <!-- message screen -->
-        <activity android:name=".MessagesActivity" />
-
         <!-- Login Screen (Main Activity - Launcher) -->
         <activity
             android:name=".MainActivity"

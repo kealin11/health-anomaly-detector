@@ -11,8 +11,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.Objects;
-
 public class MainActivity extends AppCompatActivity {
 
     EditText etEmail, etPassword;
@@ -52,16 +50,12 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show();
 
-                            // Simple role routing for demo
-                            // allows us to identify a user using email
-                            if (email.contains("doctor")) {
-                                startActivity(new Intent(MainActivity.this, MonitoringActivity.class));
-                            } else {
-                                startActivity(new Intent(MainActivity.this, DashboardActivity.class));
-                            }
+                            // ✅ Go to DashboardActivity instead of MonitoringActivity
+                            Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
+                            startActivity(intent);
                             finish(); // Prevent going back to login
                         } else {
-                            Toast.makeText(this, "Login failed: " + Objects.requireNonNull(task.getException()).getMessage(),
+                            Toast.makeText(this, "Login failed: " + task.getException().getMessage(),
                                     Toast.LENGTH_LONG).show();
                         }
                     });
